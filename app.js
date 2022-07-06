@@ -22,9 +22,9 @@ function makeArray() {
         for(let i = 0; i < numValue; i++) {
             const value = Math.floor(Math.random() * 100);
             const bar = document.createElement("div");
-
+            bar.classList.add("bar");
             //bar height
-            bar.style.height = '${value*3}px';
+            bar.style.height = `${value * 3}px`;
             //translates at x-axis
             bar.style.transform = `translateX(${i * 30}px)`;
 
@@ -40,6 +40,9 @@ function makeArray() {
 
 }
 
+/**
+ * this function deletes the current array
+ */
 function deleteArray() {
     const bar = document.querySelector("#bars");
     bar.innerHTML = '';
