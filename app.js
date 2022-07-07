@@ -20,16 +20,16 @@ function makeArray() {
 
     else{
         for(let i = 0; i < numValue; i++) {
-            const value = Math.floor(Math.random() * 100);
+            const value = Math.floor(Math.random() * 100) + 1;
             const bar = document.createElement("div");
             bar.classList.add("bar");
             //bar height
             bar.style.height = `${value * 3}px`;
             //translates at x-axis
-            bar.style.transform = `translateX(${i * 30}px)`;
+       //     bar.style.transform = `translateX(${i * 30}px)`;
 
             const label = document.createElement("label");
-            label.classList.add("id_bar");
+            label.classList.add("bar_id");
             label.innerHTML = value;
             bar.appendChild(label);
             container.appendChild(bar);
