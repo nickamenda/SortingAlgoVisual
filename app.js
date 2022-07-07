@@ -2,6 +2,7 @@
 
 const BUTTON_COLOR = "#7FFF00"
 const DISABLED_BUTTON_COLOR = "#A9A9A9"
+const OG = "#00b7ff"
 const container = document.querySelector(".data-section");
 var delay = 260;
 
@@ -52,6 +53,10 @@ function deleteArray() {
     bar.innerHTML = '';
 }
 
+
+
+
+
 /**
  * bubble sort
  */
@@ -79,8 +84,8 @@ async function bubbleSort() {
                 element[i].style.height = element[i+1].style.height;
                 element[i+1].style.height = temp;
         }
-        element[i].style.backgroundColor = '#00b7ff';
-        element[i+1].style.backgroundColor = '#00b7ff';
+        element[i].style.backgroundColor = OG;
+        element[i+1].style.backgroundColor = OG;
     }
         element[element.length-j-1].style.backgroundColor = 'lime';
         }
@@ -90,6 +95,52 @@ async function bubbleSort() {
 element[0].style.backgroundColor = 'lime'; //based on our design, the first element doesnt get colored green
 enable();
 }
+
+
+/**
+ * insertion sort
+ */
+ async function insertionSort() {
+    const element = document.querySelectorAll(".bar");
+
+    for(let i = 1; i < element.length; i++) {
+        let key = element[i].style.height;
+        element[i].style.backgroundColor = 'red';
+        let j = i - 1;
+
+        while (j >= 0 && (parseInt(element[j].style.height) > parseInt(key))) {
+            element[j].style.backgroundColor = 'red';
+            element[j + 1].style.height = element[j].style.height;
+            j--;
+            await stall(delay);
+
+            for(let k = i; k >= 0; k--){
+                element[k].style.backgroundColor = 'lime';
+            }
+        }
+        element[j+1].style.height = key;
+    }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /** 
