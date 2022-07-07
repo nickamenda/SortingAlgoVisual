@@ -64,10 +64,12 @@ async function bubbleSort() {
 
         notDone = false;
 
-    for(let i = 0; i < element.length-1; i++) {
+    for (let j = 0; j < element.length -1; ++j) { //this is for the color after the bar is correctly placed
 
-            element[i].style.bacwakgroundColor = 'blue';
-            element[i+1].style.backgroundColor = 'blue';
+    for(let i = 0; i < element.length-j-1; i++) {
+
+            element[i].style.backgroundColor = 'red';
+            element[i+1].style.backgroundColor = 'red';
             if(parseInt(element[i].style.height) > parseInt(element[i+1].style.height)){
                 await stall(delay);
                 notDone = true;
@@ -77,13 +79,15 @@ async function bubbleSort() {
                 element[i].style.height = element[i+1].style.height;
                 element[i+1].style.height = temp;
         }
-        element[i].style.backgroundColor = 'red';
-        element[i+1].style.backgroundColor = 'red';
+        element[i].style.backgroundColor = '#00b7ff';
+        element[i+1].style.backgroundColor = '#00b7ff';
     }
+        element[element.length-j-1].style.backgroundColor = 'lime';
+        }
+
 }
-for (let i = 0; i < element.length; i++) {
-element[i].style.backgroundColor = 'lime';
-}
+
+element[0].style.backgroundColor = 'lime'; //based on our design, the first element doesnt get colored green
 enable();
 }
 
