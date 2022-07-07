@@ -3,6 +3,7 @@
 const BUTTON_COLOR = "#7FFF00"
 const DISABLED_BUTTON_COLOR = "#A9A9A9"
 const container = document.querySelector(".data-section");
+var delay = 260;
 
 /**
  * this function makes the array with the input
@@ -64,10 +65,11 @@ async function bubbleSort() {
         notDone = false;
 
     for(let i = 0; i < element.length-1; i++) {
-            element[i].style.backgroundColor = 'blue';
+
+            element[i].style.bacwakgroundColor = 'blue';
             element[i+1].style.backgroundColor = 'blue';
             if(parseInt(element[i].style.height) > parseInt(element[i+1].style.height)){
-                await waitforme(260);
+                await stall(delay);
                 notDone = true;
 
                 //swap
@@ -94,11 +96,22 @@ function swap(x, y) {
 }
 */
 
-function waitforme(milisec) { 
+function stall(ms) { 
     return new Promise(resolve => { 
-        setTimeout(() => { resolve('') }, milisec); 
+        setTimeout(() => { resolve('') }, ms); 
     }) 
 }
+
+
+
+let delayElement = document.querySelector('#speed_input');
+
+// Event listener to update delay time 
+delayElement.addEventListener('input', function(){
+    console.log(delayElement.value, typeof(delayElement.value));
+    delay = 320 - parseInt(delayElement.value);
+});
+
 
 /**
  * this function enables all buttons and switches its color to green
