@@ -120,12 +120,90 @@ enable();
         }
         element[j+1].style.height = key;
     }
-
+    enable();
  }
 
 
 
+/**
+ * merge sort
+ */
+ async function mergeSort() {
 
+   let ele = document.querySelectorAll(".bar");
+
+    let valuesArray = []
+    for(let i = 0; i<ele.length; i++){
+        valuesArray.push(parseInt(ele[i].style.height));
+    }
+
+    sort(valuesArray, 0, ele.length - 1);
+
+
+    async function merge(element, left, middle, right) {
+
+        let temp = [];
+        let i = left;
+        let j = middle + 1;
+        let k = 0;
+
+
+        while(i <= middle && j <= right) {
+
+            ele[i].style.backgroundColor = "red";
+            ele[j].style.backgroundColor = "red";
+
+            await stall(delay);
+
+            ele[i].style.backgroundColor = "lime";
+            ele[j].style.backgroundColor = "lime";
+
+            if (element[i] <= element[j]) {
+                temp[k] = element[i];
+                i++;
+                k++;
+            }
+            else {
+                temp[k] = element[j];
+                j++;
+                k++;
+            }
+        }
+        while(i <= middle) {
+            temp[k] = element[i];
+            k++;
+            i++;
+        }
+        while(j <= right) {
+            temp[k] = element[j];
+            k++;
+            j++;
+        }
+        for(let i = left; i <= right; i++) {
+            let h = parseInt(temp[i-left]);
+            ele[i].style.height = `${h}px`;
+            ele[i].style.backgroundColor = OG;
+
+            element[i] = temp[i - left];
+        }
+    }
+
+    async function sort(element, left, right) {
+
+        await stall(delay);
+
+        if(left < right){
+
+
+            let m = parseInt((left + right) / 2); //using math.floor because we need a whole number
+            await sort(element, left, m);
+            await sort(valuesArray, m + 1, right);
+            await merge(valuesArray, left, m, right);
+            
+    }
+    }
+     enable(); // TODO: enables too fast for merge sort
+ }
 
 
 
