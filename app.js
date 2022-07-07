@@ -4,6 +4,9 @@ const BUTTON_COLOR = "#7FFF00"
 const DISABLED_BUTTON_COLOR = "#A9A9A9"
 const container = document.querySelector(".data-section");
 
+/**
+ * this function makes the array with the input
+ */
 function makeArray() {
 
     deleteArray();
@@ -46,6 +49,55 @@ function makeArray() {
 function deleteArray() {
     const bar = document.querySelector("#bars");
     bar.innerHTML = '';
+}
+
+/**
+ * bubble sort
+ */
+async function bubbleSort() {
+
+    const element = document.querySelectorAll(".bar");
+    var notDone = true;  //varibale to check if sort is done
+
+    while(notDone){
+
+        notDone = false;
+
+    for(let i = 0; i < element.length-1; i++) {
+            element[i].style.backgroundColor = 'blue';
+            element[i+1].style.backgroundColor = 'blue';
+            if(parseInt(element[i].style.height) > parseInt(element[i+1].style.height)){
+                await waitforme(260);
+                notDone = true;
+
+                //swap
+                var temp = element[i].style.height;
+                element[i].style.height = element[i+1].style.height;
+                element[i+1].style.height = temp;
+        }
+        element[i].style.backgroundColor = 'red';
+        element[i+1].style.backgroundColor = 'red';
+    }
+}
+for (let i = 0; i < element.length; i++) {
+element[i].style.backgroundColor = 'lime';
+}
+enable();
+}
+
+
+/** 
+function swap(x, y) {
+    let temp = x.style.height;
+    x.style.height = y.style.height;
+    y.style.height = temp;
+}
+*/
+
+function waitforme(milisec) { 
+    return new Promise(resolve => { 
+        setTimeout(() => { resolve('') }, milisec); 
+    }) 
 }
 
 /**
