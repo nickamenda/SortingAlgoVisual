@@ -7,26 +7,22 @@
   body {
     background: var(--bg);
     color: var(--fontColor);
-    font-family: helvetica;
+    font-family: roboto;
+    background-color: #242582;
+    color: white;
   }
 
-h1 {
+  h1 {
   text-align: center;
+  font-size: 45px;
 }
 
-p {
-    font-family: helvetica;
+  p {
     font-size: 15pt;
   }
 
-.user-input {
-    font-family: helvetica;
-    font-size: 40pt;
-  }
-
-.little {
-    font-family: helvetica;
-    font-size: 10pt;
+  .little {
+    font-size: 12px;
     font-style: italic;
   }
 
@@ -39,14 +35,14 @@ p {
     justify-content: center;
     transition: 2s all ease;
   }
-    
+
   .bar {
     width: 10px;
     border: 1pt solid black;
     background-color: rgb(0, 183, 255);
     transition: 0.2s all ease;
   }
-    
+
   .bar_id {
     position: absolute;
     top: -24px;
@@ -54,4 +50,58 @@ p {
     text-align: center;
   }
 
-  
+  button {
+    background-color: rgb(255, 255, 255);
+    color: black;
+
+  }
+
+  #numValues,
+  #makeArrayButton,
+  .little {
+    display: flex;
+    margin: 5px auto;
+    justify-content: center;
+  }
+
+  .button-section {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .speedSelect {
+    display: flex;
+    margin: 7px auto;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: white;
+  }
+
+  #numValues::placeholder {
+    font-size: 12px;
+  }
+
+  button {
+    border-radius: 10px;
+  }
+
+  #speed_input:hover {
+    cursor: grab;
+  }
+
+
+
+
+
+
+
+
+
+
+
+

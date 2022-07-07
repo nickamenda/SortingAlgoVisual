@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Space+Mono&display=swap" rel="stylesheet">
   <title>Sorting Visualizer</title>
-    <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css">
 
 </head>
 
@@ -16,10 +19,9 @@
     <section class ="head"></section>
 
     <section class ="user_input">
-      <p>Number of Values in Array</p>
-      <input type="text" name="numValues" id="numValues" value=""/>
-      <button class="button" onclick="makeArray()" id="makeArrayButton" >Make a New Array</button>                    <!-- Clicking this generates a new array -->
-      <p class="little">Number has to be Between 5 to 100</p>
+      <input type="text" name="numValues" id="numValues" value="" placeholder="Number of Items in Array"/>
+      <p class="little">*Number has to be between 5 and 100</p>
+      <button class="button" onclick="makeArray()" id="makeArrayButton" >Create Array</button>                    <!-- Clicking this generates a new array -->
     </section>
 
     <section class ="data-section" id="bars"></section>
@@ -40,7 +42,7 @@
     </span>
     </div>
 
-  
+
 </body>
 
     <script src="app.js"></script>
