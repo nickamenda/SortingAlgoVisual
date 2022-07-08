@@ -1,6 +1,6 @@
 'use strict';
 
-const BUTTON_COLOR = "#7FFF00"
+const BUTTON_COLOR = "#FFFFFF"
 const DISABLED_BUTTON_COLOR = "#A9A9A9"
 const OG = "#00b7ff"
 const container = document.querySelector(".data-section");
@@ -38,7 +38,7 @@ function makeArray() {
             label.innerHTML = value;
             bar.appendChild(label);
             container.appendChild(bar);
-            
+
         }
     }
 
@@ -203,7 +203,7 @@ enable();
             await sort(element, left, m);
             await sort(valuesArray, m + 1, right);
             await merge(valuesArray, left, m, right);
-            
+
     }
     }
  }
@@ -285,36 +285,17 @@ enable();
  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-function swap(arr, x, y) {
-    let temp = arr[x];
-    arr[x] = arr[y];
-    arr[y] = temp;
-}
-*/
-
-function stall(ms) { 
-    return new Promise(resolve => { 
-        setTimeout(() => { resolve('') }, ms); 
-    }) 
+function stall(ms) {
+    return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, ms);
+    })
 }
 
 
 
 let delayElement = document.querySelector('#speed_input');
 
-// Event listener to update delay time 
+// Event listener to update delay time
 delayElement.addEventListener('input', function(){
     console.log(delayElement.value, typeof(delayElement.value));
     delay = 320 - parseInt(delayElement.value);
