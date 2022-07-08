@@ -186,9 +186,13 @@ enable();
 
             element[i] = temp[i - left];
         }
+        if(temp.length == element.length){
+            enable();
+        }
     }
 
     async function sort(element, left, right) {
+        
 
         await stall(delay);
 
@@ -202,12 +206,84 @@ enable();
             
     }
     }
-     enable(); // TODO: enables too fast for merge sort
  }
 
 
 
 
+/**
+ * quick sort
+ */
+ async function quickSort() {
+
+    let element = document.querySelectorAll(".bar");
+
+    let array = [];
+
+    for(let i = 0; i<element.length; i++){
+        array.push(parseInt(element[i].style.height));
+    }
+
+    sort(array,0,array.length-1);
+
+    async function sort(arr, low, high){
+        if (low < high) {
+            let part = await partition(arr, low, high);
+
+           await sort(arr, low, part -1);
+           await sort(arr, part + 1, high);
+        }
+        else{
+            if(low >= 0 && high >= 0 && low <element.length && high <element.length){
+                element[high].style.background = 'lime';
+                element[low].style.background = 'lime';
+            }
+        }
+    }
+
+    async function partition(arr, low, high){
+        let pivot = arr[high];
+
+        element[high].style.backgroundColor = 'red';
+
+        let i = low - 1;
+
+        for(let j = low; j <= high-1; j++) {
+            element[j].style.backgroundColor = 'yellow';
+            await stall(delay);
+
+            element[j].style.backgroundColor = OG;
+            element[i+1].style.backgroundColor = OG;
+
+            if (arr[j] < pivot) {
+                i++;
+
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+              //  swap(arr, i, j);
+
+                let temp1 = element[i].style.height;
+                element[i].style.height = element[j].style.height;
+                element[j].style.height = temp1;
+            }
+        }
+
+        let temp2 = element[high].style.height;
+        element[high].style.height = element[i+1].style.height;
+        element[i+1].style.height = temp2;
+        element[high].style.backgroundColor = OG;
+        element[i+1].style.backgroundColor = 'lime';
+        await stall(delay);
+
+
+        let temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
+     //   swap(arr, i+1, high);
+        return (i + 1);
+ }
+}
 
 
 
@@ -220,12 +296,11 @@ enable();
 
 
 
-
-/** 
-function swap(x, y) {
-    let temp = x.style.height;
-    x.style.height = y.style.height;
-    y.style.height = temp;
+/*
+function swap(arr, x, y) {
+    let temp = arr[x];
+    arr[x] = arr[y];
+    arr[y] = temp;
 }
 */
 
