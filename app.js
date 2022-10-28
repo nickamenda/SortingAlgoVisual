@@ -2,7 +2,7 @@
 
 const BUTTON_COLOR = "#FFFFFF"
 const DISABLED_BUTTON_COLOR = "#A9A9A9"
-const OG = "#00b7ff"
+const OG = "#57cbff"
 const container = document.querySelector(".data-section");
 var delay = 260;
 
@@ -15,7 +15,6 @@ function makeArray() {
 
     var numValue= document.getElementById("numValues").value;
     let array = []
-    //checks if input is a number and in range
     if (isNaN(numValue)) {
         window.alert("Input has to be a number!");
     }
@@ -28,11 +27,7 @@ function makeArray() {
             const value = Math.floor(Math.random() * 100) + 1;
             const bar = document.createElement("div");
             bar.classList.add("bar");
-            //bar height
             bar.style.height = `${value * 3}px`;
-            //translates at x-axis
-       //     bar.style.transform = `translateX(${i * 30}px)`;
-
             const label = document.createElement("label");
             label.classList.add("bar_id");
             label.innerHTML = value;
@@ -45,9 +40,6 @@ function makeArray() {
 
 }
 
-/**
- * this function deletes the current array
- */
 function deleteArray() {
     const bar = document.querySelector("#bars");
     bar.innerHTML = '';
@@ -57,9 +49,7 @@ function deleteArray() {
 
 
 
-/**
- * bubble sort
- */
+
 async function bubbleSort() {
 
     const element = document.querySelectorAll(".bar");
@@ -87,19 +77,17 @@ async function bubbleSort() {
         element[i].style.backgroundColor = OG;
         element[i+1].style.backgroundColor = OG;
     }
-        element[element.length-j-1].style.backgroundColor = 'lime';
+        element[element.length-j-1].style.backgroundColor = '#00FF00';
         }
 
 }
 
-element[0].style.backgroundColor = 'lime'; //based on our design, the first element doesnt get colored green
+element[0].style.backgroundColor = '#00FF00'; //based on our design, the first element doesnt get colored green
 enable();
 }
 
 
-/**
- * insertion sort
- */
+
  async function insertionSort() {
     const element = document.querySelectorAll(".bar");
 
@@ -115,7 +103,7 @@ enable();
             await stall(delay);
 
             for(let k = i; k >= 0; k--){
-                element[k].style.backgroundColor = 'lime';
+                element[k].style.backgroundColor = '#00FF00';
             }
         }
         element[j+1].style.height = key;
@@ -125,9 +113,7 @@ enable();
 
 
 
-/**
- * merge sort
- */
+
  async function mergeSort() {
 
    let ele = document.querySelectorAll(".bar");
@@ -155,8 +141,8 @@ enable();
 
             await stall(delay);
 
-            ele[i].style.backgroundColor = "lime";
-            ele[j].style.backgroundColor = "lime";
+            ele[i].style.backgroundColor = "#00FF00";
+            ele[j].style.backgroundColor = "#00FF00";
 
             if (element[i] <= element[j]) {
                 temp[k] = element[i];
@@ -192,7 +178,7 @@ enable();
     }
 
     async function sort(element, left, right) {
-        
+
 
         await stall(delay);
 
@@ -211,14 +197,13 @@ enable();
 
 
 
-/**
- * quick sort
- */
+
  async function quickSort() {
 
     let element = document.querySelectorAll(".bar");
 
     let array = [];
+
 
     for(let i = 0; i<element.length; i++){
         array.push(parseInt(element[i].style.height));
@@ -235,8 +220,8 @@ enable();
         }
         else{
             if(low >= 0 && high >= 0 && low <element.length && high <element.length){
-                element[high].style.background = 'lime';
-                element[low].style.background = 'lime';
+                element[high].style.background = '#00FF00';
+                element[low].style.background = '#00FF00';
             }
         }
     }
@@ -273,7 +258,7 @@ enable();
         element[high].style.height = element[i+1].style.height;
         element[i+1].style.height = temp2;
         element[high].style.backgroundColor = OG;
-        element[i+1].style.backgroundColor = 'lime';
+        element[i+1].style.backgroundColor = '#00FF00';
         await stall(delay);
 
 
@@ -295,32 +280,25 @@ function stall(ms) {
 
 let delayElement = document.querySelector('#speed_input');
 
-// Event listener to update delay time
+
 delayElement.addEventListener('input', function(){
     console.log(delayElement.value, typeof(delayElement.value));
     delay = 320 - parseInt(delayElement.value);
 });
 
 
-/**
- * this function enables all buttons and switches its color to green
- */
+
  function enable() {
 
     document.getElementById("makeArrayButton").disabled = false;
-    document.getElementById("makeArrayButton").style.backgroundColor = BUTTON_COLOR;
 
     document.getElementById("quickSortButton").disabled = false;
-    document.getElementById("quickSortButton").style.backgroundColor = BUTTON_COLOR;
 
     document.getElementById("mergeSortButton").disabled = false;
-    document.getElementById("mergeSortButton").style.backgroundColor = BUTTON_COLOR;
 
     document.getElementById("insertionSortButton").disabled = false;
-    document.getElementById("insertionSortButton").style.backgroundColor = BUTTON_COLOR;
 
     document.getElementById("bubbleSortButton").disabled = false;
-    document.getElementById("bubbleSortButton").style.backgroundColor = BUTTON_COLOR;
 
 }
 
@@ -330,18 +308,13 @@ delayElement.addEventListener('input', function(){
 function disable() {
 
     document.getElementById("makeArrayButton").disabled = true;
-    document.getElementById("makeArrayButton").style.backgroundColor = DISABLED_BUTTON_COLOR;
 
     document.getElementById("quickSortButton").disabled = true;
-    document.getElementById("quickSortButton").style.backgroundColor = DISABLED_BUTTON_COLOR;
 
     document.getElementById("mergeSortButton").disabled = true;
-    document.getElementById("mergeSortButton").style.backgroundColor = DISABLED_BUTTON_COLOR;
 
     document.getElementById("insertionSortButton").disabled = true;
-    document.getElementById("insertionSortButton").style.backgroundColor = DISABLED_BUTTON_COLOR;
 
     document.getElementById("bubbleSortButton").disabled = true;
-    document.getElementById("bubbleSortButton").style.backgroundColor = DISABLED_BUTTON_COLOR;
 
 }
