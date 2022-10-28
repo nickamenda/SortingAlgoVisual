@@ -1,30 +1,30 @@
 :root {
-    --green: #00FF00;
-    --white: #FFFFFF;
-    --black: #000000;
-      --dark-navy: #020c1b;
-      --navy: #0a192f;
-      --light-navy: #112240;
-      --lightest-navy: #233554;
-      --navy-shadow: rgba(2, 12, 27, 0.7);
-      --dark-slate: #495670;
-      --slate: #8892b0;
-      --light-slate: #a8b2d1;
-      --lightest-slate: #ccd6f6;
-      --white: #e6f1ff;
-      --green: #64ffda;
-      --green-tint: rgba(100, 255, 218, 0.1);
-      --pink: #f57dff;
-      --blue: #57cbff;
-  }
+  --green: #00FF00;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.1);
+  --pink: #f57dff;
+  --blue: #57cbff;
+}
 
-  body {
-    background-color: var(--dark-navy);
-    color: var(--lightest-slate);
-    font-family: roboto;
-  }
+body {
+  background-color: var(--dark-navy);
+  color: var(--lightest-slate);
+  font-family: roboto;
+}
 
-  h1 {
+h1 {
   text-align: center;
   font-size: 45px;
   color: var(--blue);
@@ -33,119 +33,123 @@
 }
 
 
-  .little {
-    font-size: 12px;
-    font-style: italic;
-  }
+.little {
+  font-size: 12px;
+  font-style: italic;
+}
 
-  .data-section {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    height: 450px;
-    justify-content: center;
-    transition: 2s all ease;
-  }
+.data-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 430px;
+  justify-content: center;
+  transition: 2s all ease;
+}
 
-  .bar {
-    width: 10px;
-    border: 1pt solid black;
-    background-color: var(--blue);
-    transition: 0.2s all ease;
-  }
+.bar {
+  width: 10px;
+  border: 1pt solid black;
+  background-color: var(--blue);
+  transition: 0.2s all ease;
+}
 
-  .bar_id {
-    position: absolute;
-    top: -24px;
-    width: 100%;
-    text-align: center;
-  }
+.bar_id {
+  position: absolute;
+  top: -24px;
+  width: 100%;
+  text-align: center;
+}
 
-  button {
-    background-color: var(--lightest-slate);
-    color: black;
-  }
+button {
+  background-color: var(--lightest-slate);
+  color: black;
+}
 
-  #numValues,
-  #makeArrayButton,
-  .little {
-    display: flex;
-    margin: 5px auto;
-    justify-content: center;
-  }
+#numValues,
+#makeArrayButton,
+.little {
+  display: flex;
+  margin: 5px auto;
+  justify-content: center;
+}
 
-  .button-section {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-  }
+.button-section {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
 
-  .speedSelect {
-    display: flex;
-    margin: 7px auto;
-    justify-content: center;
-    border-radius: 10px;
-  }
+.speedSelect {
+  display: flex;
+  margin: 7px auto;
+  justify-content: center;
+  border-radius: 10px;
+}
 
-  button:hover {
-    cursor: pointer;
-    background-color: var(--lightest-slate);
-  }
+button:hover {
+  cursor: pointer;
+  background-color: var(--lightest-slate);
+}
 
-  #numValues::placeholder {
-    font-size: 12px;
-  }
-
-
-  #speed_input:hover {
-    cursor: grab;
-  }
-
-  button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: none;
-    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
-    color: #000000;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-
-  .user_input {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  input {
-    background-color: var(--lightest-slate);
-    padding: 5px;
-  }
-
-  button:disabled {
-    cursor:default;
-    background-color: var(--navy);
-  }
+#numValues::placeholder {
+  font-size: 12px;
+}
 
 
-  #speed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
+#speed_input:hover {
+  cursor: grab;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #000000;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.user_input {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+input {
+  background-color: var(--lightest-slate);
+  padding: 5px;
+}
+
+button:disabled {
+  cursor: default;
+  background-color: var(--navy);
+}
 
 
+#speed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
 
+footer {
+  color: var(--blue);
+  text-align: center;
+}
 
+a {
+  text-decoration: none;
+  color: var(--blue)
+}
 
-
-
-
-
-
-
+a:hover {
+  cursor: pointer;
+}
